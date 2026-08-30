@@ -1,0 +1,289 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GoalCard from "../components/GoalCard.astro";
+
+const currentDate: Date = new Date();
+const registrationDeadline: Date = new Date("2026-11-10");
+const daysTillDeadline: number = Math.max(
+    0,
+    Math.floor(
+        (registrationDeadline.getTime() - currentDate.getTime()) /
+            (1000 * 60 * 60 * 24),
+    ),
+);
+
+const currentFunding: number = 0;
+const targetFunding: number = 6300 * 328;
+
+const currentMentors: number = 0;
+const targetMentors: number = 5;
+
+const haveAWorkspace: boolean = false;
+---
+
+<BaseLayout>
+    <section id="hero" class="hero-layout">
+        <div class="hero-content">
+            <h1>Pioneering FIRST Robotics in Sri Lanka</h1>
+            <p class="subtitle">
+                Advancing STEM through intense sport robotics. We are building a
+                community team to represent Sri Lanka on the global stage.
+            </p>
+
+            <div class="button-group">
+                <a href="#get-involved" class="button-link">Join the Team</a>
+                <a
+                    href="#targets"
+                    class="button-link"
+                    style="background-color: transparent; border: 1px solid var(--white);"
+                    >Sponsor our Goal</a
+                >
+            </div>
+        </div>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/Jd29kzjclV0?si=hwkDV5iHEU_rMBhk"
+                title="Watch an FRC Match!"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="what-is-frc" class="content-section">
+        <h2>What is FRC?</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>The Challenge</h3>
+                <p>
+                    High schoolers get roughly eight weeks to design, build,
+                    program, and test a 50kg industrial-scale robot to be a
+                    competitive machine in an alliance.
+                </p>
+            </div>
+            <div class="card">
+                <h3>The Scale</h3>
+                <p>
+                    Thousands of teams compete yearly across over 30 countries.
+                    A Sri Lankan team would be amongst the first in South Asia
+                    to do so, pioneering access to high-tier STEM.
+                </p>
+            </div>
+            <div class="card">
+                <h3>The Impact</h3>
+                <p>
+                    It bridges the gap between classroom theory and practical
+                    engineering, nurturing the soft and hard skills our modern
+                    world relies on.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="targets" class="content-section">
+        <h2>Mission Roadmap & Deadlines</h2>
+        <div class="tracker-layout solid-bg">
+            <div class="countdown">
+                <span class="huge-number">{daysTillDeadline}</span>
+                <span class="countdown-label"
+                    >Days until team registrations closes</span
+                >
+            </div>
+
+            <div class="goals-container">
+                <GoalCard current={currentFunding} target={targetFunding}>
+                    <span slot="goal-name">Funding</span>
+                    <span slot="goal-desc"
+                        >{currentFunding.toLocaleString()} LKR / {
+                            targetFunding.toLocaleString()
+                        }</span
+                    >
+                </GoalCard>
+                <GoalCard current={currentMentors} target={targetMentors}>
+                    <span slot="goal-name">Adult Mentors</span>
+                    <span slot="goal-desc"
+                        >{currentMentors} / {targetMentors}</span
+                    >
+                </GoalCard>
+                <GoalCard current={haveAWorkspace ? 1 : 0} target={1}>
+                    <span slot="goal-name">Workspace</span>
+                    <span slot="goal-desc"
+                        >{
+                            haveAWorkspace
+                                ? "Secured"
+                                : "Seeking dedicated area in Colombo"
+                        }</span
+                    >
+                </GoalCard>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-involved" class="content-section">
+        <h2>Get Involved</h2>
+        <div class="card-grid">
+            <div class="card outline-card">
+                <h3>Students (&lt;18)</h3>
+                <p>
+                    Ambitious students are the backbone of an FRC team. No prior
+                    experience is required. You will learn 3D CAD, Python
+                    programming, and machining hands-on.
+                </p>
+                <a href="#" class="text-link">Register your interest →</a>
+            </div>
+            <div class="card outline-card">
+                <h3>Mentors</h3>
+                <p>
+                    We need Colombo's tech professionals: software engineers,
+                    CAD designers, and project managers. Prior FIRST experience
+                    is not required; you will provide technical guidance and
+                    safety oversight.
+                </p>
+                <a href="#" class="text-link">Apply to mentor →</a>
+            </div>
+            <div class="card outline-card">
+                <h3>Sponsors & Partners</h3>
+                <p>
+                    Help us cover our registration fee, secure manufacturing
+                    materials, or provide access to CNC machining. By
+                    partnerning with us, you help drive STEM in Sri Lanka.
+                </p>
+                <a href="#" class="text-link">View our Prospectus →</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .solid-bg {
+        background-color: var(--card-bg);
+        padding: 3rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero Layout */
+    .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: stretch;
+        margin-top: 2rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        border-radius: 12px;
+        border: none;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        padding: 2rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .outline-card {
+        background-color: transparent;
+        border: 1px solid var(--cornflower);
+    }
+
+    .card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        flex-grow: 1;
+    }
+
+    .text-link {
+        color: var(--cornflower);
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 1rem;
+    }
+
+    .text-link:hover {
+        color: var(--white);
+    }
+
+    .tracker-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .countdown {
+        text-align: center;
+    }
+
+    .huge-number {
+        display: block;
+        font-size: 6rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--cinnabar);
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .goals-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero-layout,
+        .tracker-layout {
+            grid-template-columns: 1fr;
+        }
+        .solid-bg {
+            padding: 1.5rem;
+        }
+    }
+</style>
