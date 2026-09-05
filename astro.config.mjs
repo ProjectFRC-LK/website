@@ -13,4 +13,6 @@ export default defineConfig({
             },
         },
     },
+    site: 'https://projectfrc-lk.github.io',
+    base: "/website"
 });
