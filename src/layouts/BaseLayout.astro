@@ -18,6 +18,9 @@
         <header class="site-header">
             <nav class="nav-container">
                 <div class="logo">ProjectFRC LK</div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                </ul>
             </nav>
         </header>
 
@@ -76,14 +79,34 @@
         padding: 1rem 1.5rem;
     }
 
+    .nav-container {
+        display: flex;
+        max-width: 1250px;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
     .logo {
         font-family: "Space Grotesk", sans-serif;
         font-weight: 700;
         font-size: 1.2rem;
-        max-width: 1250px;
-        margin: 0 auto;
     }
 
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+        color: var(--cinnabar-hover);
+    }
     footer {
         text-align: center;
         padding: 2rem;
