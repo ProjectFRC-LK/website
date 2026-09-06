@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <section class="page-hero">
+        <h1>The Ultimate Sport for the Mind</h1>
+        <p class="subtitle">
+            The FIRST Robotics Competition (FRC) challenges secondary school students to design, build, and program industrial-level robots under strict engineering constraints[cite: 1].
+        </p>
+    </section>
+
+    <section id="the-challenge" class="content-section solid-bg">
+        <h2>The Challenge</h2>
+        <p class="large-text">
+            Operating under an intense multi-week window, students are tasked with raising funds, designing a team brand, honing teamwork skills, and building and programming a 50 kg competitive robot[cite: 1]. 
+        </p>
+        <p class="large-text mt-1">
+            It is as close to real-world engineering and business management as a student can get before university.
+        </p>
+    </section>
+
+    <section id="timeline" class="content-section">
+        <h2>The Annual Cycle</h2>
+        <div class="timeline-grid">
+            
+            <!-- Phase 1 -->
+            <div class="timeline-card">
+                <div class="phase-header">
+                    <span class="phase-num">01</span>
+                    <h3>The Kickoff (January)</h3>
+                </div>
+                <p>
+                    Every January, a brand-new game and strict rule manual are released globally via broadcast. Teams have zero prior knowledge of the challenge and must immediately begin strategic analysis and prototyping.
+                </p>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-card">
+                <div class="phase-header">
+                    <span class="phase-num">02</span>
+                    <h3>Build Season (Jan - March)</h3>
+                </div>
+                <p>
+                    Teams meet aggressively—often 20 to 30 hours per week. In this window, students must finalize 3D CAD designs, machine custom parts, wire electrical systems, and write real-time control software to complete a battle-ready machine[cite: 1].
+                </p>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-card">
+                <div class="phase-header">
+                    <span class="phase-num">03</span>
+                    <h3>Competitions (March - April)</h3>
+                </div>
+                <p>
+                    Teams travel to multi-day regional arena events. Working in randomized alliances of three, robots compete on a basketball-court-sized field. Teams repair damages in the pit and optimize software on the fly to qualify for the World Championship.
+                </p>
+            </div>
+
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* Reuse Hero Styles */
+    .page-hero {
+        text-align: center;
+        padding: 4rem 1rem 2rem 1rem;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        color: var(--white);
+    }
+
+    .subtitle {
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        max-width: 700px;
+        margin: 1rem auto 0 auto;
+    }
+
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .solid-bg {
+        background-color: var(--card-bg);
+        padding: 3rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .large-text {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+    
+    .mt-1 { margin-top: 1rem; }
+
+    /* Timeline Grid */
+    .timeline-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .timeline-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .timeline-card {
+        background-color: rgba(255, 255, 255, 0.02);
+        border-top: 3px solid var(--cornflower);
+        padding: 2rem 1.5rem;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .phase-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .phase-num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: rgba(255,255,255,0.15);
+        line-height: 1;
+    }
+
+    .timeline-card h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--white);
+    }
+
+    .timeline-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+</style>
