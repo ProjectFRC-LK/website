@@ -3,5 +3,8 @@
 
 An in-progress website to refer people to.
 
-To-do:
+**Attributions:**
+Line Awesome for icons
+
+**To-do:**
 - [ ] Hook up website to actual links

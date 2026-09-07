@@ -22,11 +22,11 @@ const daysTillKickoff: number = Math.max(
             skills and tackle engineering under pressure.
         </p>
     </section>
-    
+
     <section id="season-timeline" class="content-section">
         <h2>Throughout a Season</h2>
         <div class="card-grid">
-            <div class="icon-card">
+            <div class="icon-card important-card">
                 <div class="card-titlebar">
                     <span class="icon">01</span>
                     <h3>Kickoff <span>(January)</span></h3>
@@ -70,15 +70,66 @@ const daysTillKickoff: number = Math.max(
                     <h3>Off Season <span>(April - Next Jan)</span></h3>
                 </div>
                 <p>
-                    Until next kickoff, students learn new things, improve their bot, prepare for recruitment, and more. In this time, teams reflect on their season and progress. Sometimes, they will compete in off-season competitions.  
+                    Until next kickoff, students learn new things, improve their
+                    bot, prepare for recruitment, and more. In this time, teams
+                    reflect on their season and progress. Sometimes, they will
+                    compete in off-season competitions.
                 </p>
             </div>
         </div>
     </section>
 
     <section id="team-roles" class="content-section">
-        <div class="card-grid">
-            div.
+        <h2>Roles on the Team</h2>
+        <div class="wide-card-grid">
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-pencil-ruler"></i></span
+                    >
+                    <h3>Design</h3>
+                </div>
+                <p>
+                    Transforms paper-sketches to tangible 3D CAD models. Through
+                    industry standard software, students learn to create
+                    simulatable replicas and engineer effectively before parts
+                    are ever touched.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-wrench"></i></span>
+                    <h3>Mechanical</h3>
+                </div>
+                <p>
+                    Constructs and assembles the physical robot. With hands-on
+                    experience such as 3D printing, using CNC routers, and
+                    lathes, aspiring engineers learn practical skills from day
+                    one.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-terminal"></i></span>
+                    <h3>Controls</h3>
+                </div>
+                <p>
+                    Creates the brains of the machine. Interacting with the
+                    robot through Python, students use sensor data and actuators
+                    to make the robot operable in the hands of a driver.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-bullhorn"></i></span>
+                    <h3>Outreach</h3>
+                </div>
+                <p>
+                    Keeps the team alive throughout seasons. Learning networking
+                    and promotional skills alongside mentors, students are
+                    responsible for managing sponsorships with companies,
+                    involving the community, and recruiting new students.
+                </p>
+            </div>
         </div>
     </section>
 </BaseLayout>
@@ -90,7 +141,7 @@ const daysTillKickoff: number = Math.max(
 
     .icon-card {
         background-color: var(--card-bg);
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
