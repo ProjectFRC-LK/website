@@ -9,37 +9,32 @@ import dbugWithRobot from "../assets/dbug-team-with-robot.jpeg";
     <section class="hero-layout">
         <div class="hero-content">
             <h1>
-                Sponsor and inspire Sri Lanka's next generation of innovators
+                Sponsor and inspire Sri Lanka's next innovators
             </h1>
             <p class="subtitle">
                 Robotics requires significant capital, but the return on
                 investment is a transformed workforce. By partnering with us,
-                you help inspire young people to pursue the skills your company
-                needs, creating future opportunities to take on highly capable,
+                you inspire the future workforce to pursue skills aligned with your company, cultivating the opportunity to take on highly capable,
                 university-ready interns.
             </p>
             <p class="subtitle emphasis">
-                Whether it is funding our $6,300 USD registration, providing
-                access to CNC tools, or mentoring, <strong
-                    >contributing in any way advances our mission and is greatly
+                Whether it is monetary funding, access to equipment such as CNC machines, or mentoring,
+                <strong>
+                    any form of contribution advances our mission and is greatly
                     appreciated</strong
-                >[cite: 5].
+                >.
             </p>
-
-            <div class="button-group">
-                <a
-                    href="mailto:enquiries@projectfrc.lk"
-                    class="button-link sponsor-btn-massive">Partner With Us</a
-                >
-            </div>
+            <a
+                href="mailto:enquiries@projectfrc.lk"
+                class="button-link sponsor-btn-massive">Partner With Us</a
+            >
         </div>
 
         <div class="image-container">
-            <!-- Using your provided team image to build emotional connection -->
             <Image
                 src={dbugWithRobot}
                 alt="FRC Team D-Bug standing around their robot"
-                class="rounded-image" width={480} height={270}
+                class="rounded-image" width={1200} height={1600}
             />
         </div>
     </section>
@@ -47,24 +42,24 @@ import dbugWithRobot from "../assets/dbug-team-with-robot.jpeg";
     <section id="sponsor-tiers" class="content-section">
         <h2>How Your Support Builds the Future</h2>
         <div class="card-grid">
-            <div class="card outline-card brand-border">
-                <h3 class="text-brand">Financial Grants</h3>
+            <div class="card outline-card">
+                <h3>Financial Grants</h3>
                 <p>
                     Directly funds our international registration fees and
                     student equity scholarships, ensuring passionate youth can
                     participate regardless of their financial background.
                 </p>
             </div>
-            <div class="card outline-card brand-border">
-                <h3 class="text-brand">In-Kind Fabrication</h3>
+            <div class="card outline-card">
+                <h3>In-Kind Fabrication</h3>
                 <p>
                     Building a 50kg robot requires heavy machinery[cite: 5]. We
                     seek partners who can provide access to CNC milling, raw
                     aluminum stock, or a secure workspace in Colombo[cite: 5].
                 </p>
             </div>
-            <div class="card outline-card brand-border">
-                <h3 class="text-brand">Technical Mentorship</h3>
+            <div class="card outline-card">
+                <h3>Technical Mentorship</h3>
                 <p>
                     We need your software and mechanical engineers to guide our
                     students in Java, C++, and 3D CAD, creating a direct
@@ -126,6 +121,7 @@ import dbugWithRobot from "../assets/dbug-team-with-robot.jpeg";
         text-transform: uppercase;
         letter-spacing: 1px;
         box-shadow: 0 4px 15px rgba(171, 49, 45, 0.4);
+        width: clamp(100%, 70vh);
     }
 
     .brand-border {
