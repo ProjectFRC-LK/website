@@ -35,6 +35,6 @@ Lean into the red (Cinnabar) to create an energetic, urgent, and professional lo
 
 ## 2. Copywriting Voice
 - **Tone:** Ambitious, professional, and deeply appreciative.
-- **Selling Point:** We are not just building a robot; we are building a pipeline of talent.
+- **Selling Point:** This is more than just building a robot, it is pioneering high level STEM and a pipeline of skilled students.
 - **Key Phrase:** "Sponsor and inspire the next generation of Sri Lankan innovators."
 - **Sponsor Rule:** Always ensure sponsors know they are crucial. Use phrases like: *"Contributing in any way advances our mission and is greatly appreciated."*
