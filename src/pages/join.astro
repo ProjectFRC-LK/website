@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// Assuming you have the D-Bug team image in your src/assets folder
+import teamPhoto from "../assets/robot-shooting-balls-during-match.jpeg";
+---
+
+<BaseLayout>
+    <section class="eoi-layout">
+        
+        <!-- Left Column: Info, Routing, and Visuals -->
+        <div class="eoi-info">
+            <h1>Student Roster Application</h1>
+            
+            <div class="disclaimer-box">
+                <strong>Important Notice:</strong> 
+                Project FRC’s participation in the 2027 season is contingent upon successfully securing our initial $6,300 USD registration funding by November 17th. While we are actively pitching corporate partners to offset costs, students must be prepared for the financial and time commitments outlined in this form.
+            </div>
+
+            <!-- Routing for non-students -->
+            <div class="card outline-card brand-border">
+                <h3>Not a student?</h3>
+                <p>We are actively seeking adult professionals to help guide the team and corporate partners to fund our journey.</p>
+                <div class="button-group-small">
+                    <a href="mailto:enquiries@projectfrc.lk" class="text-link">Mentor the Team &rarr;</a>
+                    <a href="/sponsors" class="text-link">Sponsor Us &rarr;</a>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <Image 
+                    src={teamPhoto} 
+                    alt="FRC team posing with their robot" 
+                    class="rounded-image"
+                />
+            </div>
+        </div>
+
+        <!-- Right Column: The Google Form -->
+        <div class="eoi-form-container">
+            <iframe src="https://forms.gle/3fjmBShiWUtEgTFE6" title="Student Expression of Interest Form"></iframe>
+        </div>
+        
+    </section>
+</BaseLayout>
+
+<style>
+    .eoi-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 3rem;
+        margin-top: 2rem;
+        align-items: start;
+    }
+
+    /* Keeps the left column locked in place while the user scrolls the form */
+    .eoi-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        position: sticky;
+        top: 2rem; 
+    }
+
+    .disclaimer-box {
+        border-left: 4px solid var(--cinnabar);
+        padding: 1rem;
+        background: rgba(171, 49, 45, 0.1);
+        border-radius: 0 8px 8px 0;
+        color: var(--white);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    .disclaimer-box strong {
+        color: var(--cinnabar);
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .brand-border {
+        border-color: rgba(171, 49, 45, 0.3);
+        padding: 1.5rem;
+    }
+
+    .button-group-small {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .text-link {
+        color: var(--cinnabar);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+    }
+
+    .text-link:hover {
+        color: var(--cinnabar-hover);
+        text-decoration: underline;
+    }
+
+    .image-wrapper {
+        width: 100%;
+    }
+
+    .rounded-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 2px solid var(--cinnabar);
+        box-shadow: 0 10px 30px rgba(171, 49, 45, 0.1);
+    }
+
+    /* Container tailored to Google Forms */
+    .eoi-form-container {
+        width: 100%;
+        height: clamp(800px, 120vh, 1800px); 
+        background: var(--card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .eoi-form-container > iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Stacks the columns on mobile screens */
+    @media (max-width: 900px) {
+        .eoi-layout {
+            grid-template-columns: 1fr;
+        }
+        .eoi-info {
+            position: static;
+        }
+        .eoi-form-container {
+            height: 1200px; /* Fixed fallback height for mobile */
+        }
+    }
+</style>

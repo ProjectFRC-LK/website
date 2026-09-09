@@ -3,5 +3,9 @@
 
 An in-progress website to refer people to.
 
-To-do:
-- [ ] Hook up website to actual links
+**Attributions:**
+Line Awesome for icons
+
+**To-do:**
+- [x] Hook up website to actual links
+- [ ] Fix botched commit history
