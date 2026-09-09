@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Countdown from "../components/Countdown.astro";
+
+const kickoffDate: Date = new Date("2027-01-09");
+---
+
+<BaseLayout>
+    <section id="hero" class="hero-layout">
+        <h1>What is FRC?</h1>
+        <p class="subtitle">
+            FIRST Robotics Competition (FRC) is a worldwide high-school robotics
+            tournament, where student led teams compete in a new game yearly.
+            Combining STEM education with sporting intensity, FRC empowers
+            ambitious students to collaborate with peers, learn real world
+            skills and tackle engineering under pressure.
+        </p>
+    </section>
+
+    <section id="season-timeline" class="content-section">
+        <h2>Throughout a Season</h2>
+        <div class="card-grid">
+            <div class="icon-card important-card">
+                <div class="card-titlebar">
+                    <span class="icon">01</span>
+                    <h3>Kickoff <span>(January)</span></h3>
+                </div>
+                <p>
+                    In <Countdown targetDate={kickoffDate}/> days, the 2027 season begins with a release
+                    video and game manual manual on the <a
+                        href="https://www.firstinspires.org/programs/frc/"
+                        >FIRST website</a
+                    >. With no prior knowledge, teams start strategising and
+                    prototyping for different aspects of the game.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon">02</span>
+                    <h3>Build Season <span>(Jan - March)</span></h3>
+                </div>
+                <p>
+                    Teams work intensely, often 20-30 hours per week. During the
+                    season students design, manufacture, and program their robot
+                    for competiton. Working alongside mentors, they build a
+                    battle-ready machine.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon">03</span>
+                    <h3>Competitions <span>(March - April)</span></h3>
+                </div>
+                <p>
+                    Working in randomised alliances of three each match, teams
+                    coordinate strategy and compete on a basketball-court sized
+                    field. Between games, they repair damages in pit and
+                    optimise software on the fly to qualify for Worlds.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon">04</span>
+                    <h3>Off Season <span>(April - Next Jan)</span></h3>
+                </div>
+                <p>
+                    Until next kickoff, students learn new things, improve their
+                    bot, prepare for recruitment, and more. In this time, teams
+                    reflect on their season and progress. Sometimes, they will
+                    compete in off-season competitions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team-roles" class="content-section">
+        <h2>Roles on the Team</h2>
+        <div class="wide-card-grid">
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-pencil-ruler"></i></span
+                    >
+                    <h3>Design</h3>
+                </div>
+                <p>
+                    Transforms paper-sketches to tangible 3D CAD models. Through
+                    industry standard software, students learn to create
+                    simulatable replicas and engineer effectively before parts
+                    are ever touched.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-wrench"></i></span>
+                    <h3>Mechanical</h3>
+                </div>
+                <p>
+                    Constructs and assembles the physical robot. With hands-on
+                    experience such as 3D printing, using CNC routers, and
+                    lathes, aspiring engineers learn practical skills from day
+                    one.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-terminal"></i></span>
+                    <h3>Controls</h3>
+                </div>
+                <p>
+                    Creates the brains of the machine. Interacting with the
+                    robot through Python, students use sensor data and actuators
+                    to make the robot operable in the hands of a driver.
+                </p>
+            </div>
+            <div class="icon-card">
+                <div class="card-titlebar">
+                    <span class="icon"><i class="las la-bullhorn"></i></span>
+                    <h3>Outreach</h3>
+                </div>
+                <p>
+                    Keeps the team alive throughout seasons. Learning networking
+                    and promotional skills alongside mentors, students are
+                    responsible for managing sponsorships with companies,
+                    involving the community, and recruiting new students.
+                </p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .hero-layout {
+        text-align: center;
+    }
+
+    .icon-card {
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .card-titlebar {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .card-titlebar > .icon {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: var(--text-muted);
+    }
+
+    .card-titlebar > h3 {
+        margin: 0;
+    }
+
+    .card-titlebar > h3 > span {
+        display: block;
+        color: var(--text-muted);
+    }
+</style>
