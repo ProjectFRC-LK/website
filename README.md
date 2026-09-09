@@ -7,4 +7,5 @@ An in-progress website to refer people to.
 Line Awesome for icons
 
 **To-do:**
-- [ ] Hook up website to actual links
+- [x] Hook up website to actual links
+- [ ] Fix botched commit history
