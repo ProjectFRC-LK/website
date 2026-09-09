@@ -1,16 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import GoalCard from "../components/GoalCard.astro";
+import Countdown from "../components/Countdown.astro";
 
-const currentDate: Date = new Date();
-const registrationDeadline: Date = new Date("2026-11-10");
-const daysTillDeadline: number = Math.max(
-    0,
-    Math.floor(
-        (registrationDeadline.getTime() - currentDate.getTime()) /
-            (1000 * 60 * 60 * 24),
-    ),
-);
+const registrationDeadline: Date = new Date("2026-11-17");
 
 const currentFunding: number = 0;
 const targetFunding: number = 6300 * 328;
@@ -83,7 +76,7 @@ const haveAWorkspace: boolean = false;
         <h2>Mission Roadmap & Deadlines</h2>
         <div class="tracker-layout solid-bg">
             <div class="countdown">
-                <span class="huge-number">{daysTillDeadline}</span>
+                <span class="huge-number"><Countdown targetDate={registrationDeadline}/></span>
                 <span class="countdown-label"
                     >Days until team registrations closes</span
                 >
@@ -128,7 +121,7 @@ const haveAWorkspace: boolean = false;
                     materials, or provide access to CNC machining. By
                     partnerning with us, you help drive STEM in Sri Lanka.
                 </p>
-                <a href="#" class="text-link">View our Prospectus →</a>
+                <a href="/sponsors" class="text-link">Partner with us →</a>
             </div>
             <div class="card outline-card">
                 <h3>Students (&lt;18)</h3>
@@ -137,7 +130,7 @@ const haveAWorkspace: boolean = false;
                     experience is required. You will learn 3D CAD, Python
                     programming, and machining hands-on.
                 </p>
-                <a href="#" class="text-link">Register your interest →</a>
+                <a href="/join" class="text-link">Register your interest →</a>
             </div>
             <div class="card outline-card">
                 <h3>Mentors</h3>
@@ -147,7 +140,7 @@ const haveAWorkspace: boolean = false;
                     is not required; you will provide technical guidance and
                     safety oversight.
                 </p>
-                <a href="#" class="text-link">Apply to mentor →</a>
+                <a href="mailto:enquiries@projectfrc.lk" class="text-link">Mentor the Team →</a>
             </div>
         </div>
     </section>

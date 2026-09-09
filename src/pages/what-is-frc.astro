@@ -1,14 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Countdown from "../components/Countdown.astro";
 
-const currentDate: Date = new Date();
 const kickoffDate: Date = new Date("2027-01-09");
-const daysTillKickoff: number = Math.max(
-    0,
-    Math.floor(
-        (kickoffDate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24),
-    ),
-);
 ---
 
 <BaseLayout>
@@ -32,7 +26,7 @@ const daysTillKickoff: number = Math.max(
                     <h3>Kickoff <span>(January)</span></h3>
                 </div>
                 <p>
-                    In {daysTillKickoff} days, the 2027 season begins with a release
+                    In <Countdown targetDate={kickoffDate}/> days, the 2027 season begins with a release
                     video and game manual manual on the <a
                         href="https://www.firstinspires.org/programs/frc/"
                         >FIRST website</a
