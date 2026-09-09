@@ -7,7 +7,6 @@ interface Props {
 
 const { targetDate, fallback = "--", class: className = "" } = Astro.props;
 
-// Standardize target to an ISO string for HTML data attributes
 const targetString = typeof targetDate === "string" 
   ? targetDate 
   : targetDate.toISOString();
@@ -32,18 +31,13 @@ const targetString = typeof targetDate === "string"
       const targetTime = new Date(targetStr).getTime();
       const difference = targetTime - now;
 
-      // Calculate days clamped to 0
       const days = Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)));
       el.textContent = days.toString();
     });
   }
-
-  // Update immediately on page load
+  
   updateCountdowns();
-
-  // Re-check every minute for rollover
   setInterval(updateCountdowns, 60000);
 
-  // Re-run if you navigate with Astro's View Transitions
   document.addEventListener("astro:page-load", updateCountdowns);
 </script>
