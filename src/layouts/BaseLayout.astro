@@ -164,13 +164,32 @@
         display: inline-block;
         transition: background-color 0.2s ease;
         text-align: center;
+        flex-grow: 1;
     }
 
     .button-link:hover {
         background-color: var(--cinnabar-hover);
+        border-color: var(--cinnabar-hover);
         color: var(--white);
     }
 
+
+    .wide-button {
+        width: 100%;
+    }
+
+    .secondary-button {
+        background-color: transparent;
+        border: 1px solid var(--white);
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        justify-content: stretch;
+    }
     .content-section {
         display: flex;
         flex-direction: column;

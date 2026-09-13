@@ -28,11 +28,13 @@ import robotScoringInGame from "../assets/robot-shooting-balls-during-match.jpeg
 
             <div class="button-group">
                 <a href="/join" class="button-link">Join the Team</a>
-                <a
-                    href="/sponsors"
-                    class="button-link"
-                    style="background-color: transparent; border: 1px solid var(--white);"
+                <a href="/sponsors" class="button-link secondary-button"
                     >Sponsor our Goal</a
+                >
+                <a
+                    href="/what-is-frc"
+                    class="button-link wide-button secondary-button"
+                    >Learn more about FRC</a
                 >
             </div>
         </div>
@@ -171,10 +173,7 @@ import robotScoringInGame from "../assets/robot-shooting-balls-during-match.jpeg
     }
 
     .button-group {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: auto;
+        justify-self: flex-end;
     }
 
     .text-link {
