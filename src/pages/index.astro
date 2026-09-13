@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import GoalCard from "../components/GoalCard.astro";
 import Countdown from "../components/Countdown.astro";
+import { Image } from "astro:assets";
 
 const registrationDeadline: Date = new Date("2026-11-17");
 
@@ -12,6 +13,8 @@ const currentMentors: number = 0;
 const targetMentors: number = 5;
 
 const haveAWorkspace: boolean = false;
+
+import robotScoringInGame from "../assets/robot-shooting-balls-during-match.jpeg";
 ---
 
 <BaseLayout>
@@ -33,12 +36,13 @@ const haveAWorkspace: boolean = false;
                 >
             </div>
         </div>
-        <div class="video-container">
-            <iframe
-                src="https://www.youtube.com/embed/Jd29kzjclV0?si=hwkDV5iHEU_rMBhk"
-                title="Watch an FRC Match!"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+        <div class="image-container">
+            <Image
+                src={robotScoringInGame}
+                alt="A robot scoring during a match"
+                class="rounded-image"
+            />
+            <p class="hover-text">A robot scoring during a match</p>
         </div>
     </section>
 
@@ -76,7 +80,9 @@ const haveAWorkspace: boolean = false;
         <h2>Mission Roadmap & Deadlines</h2>
         <div class="tracker-layout solid-bg">
             <div class="countdown">
-                <span class="huge-number"><Countdown targetDate={registrationDeadline}/></span>
+                <span class="huge-number"
+                    ><Countdown targetDate={registrationDeadline} /></span
+                >
                 <span class="countdown-label"
                     >Days until team registrations closes</span
                 >
@@ -140,7 +146,9 @@ const haveAWorkspace: boolean = false;
                     is not required; you will provide technical guidance and
                     safety oversight.
                 </p>
-                <a href="mailto:enquiries@projectfrc.lk" class="text-link">Mentor the Team →</a>
+                <a href="mailto:enquiries@projectfrc.lk" class="text-link"
+                    >Mentor the Team →</a
+                >
             </div>
         </div>
     </section>
@@ -167,14 +175,6 @@ const haveAWorkspace: boolean = false;
         gap: 1rem;
         flex-wrap: wrap;
         margin-top: auto;
-    }
-
-    .video-container iframe {
-        width: 100%;
-        height: 100%;
-        min-height: 300px;
-        border-radius: 12px;
-        border: none;
     }
 
     .text-link {
@@ -222,8 +222,8 @@ const haveAWorkspace: boolean = false;
     }
 
     @media (max-width: 768px) {
-        .hero-layout,
-        .tracker-layout {
+        .tracker-layout,
+        .hero-layout {
             grid-template-columns: 1fr;
         }
         .solid-bg {

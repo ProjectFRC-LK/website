@@ -3,45 +3,55 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 
 // Assuming you have the D-Bug team image in your src/assets folder
-import teamPhoto from "../assets/robot-shooting-balls-during-match.jpeg";
+import posingWithMascots from "../assets/students-posing-with-mascots.jpeg";
 ---
 
 <BaseLayout>
     <section class="eoi-layout">
-        
         <!-- Left Column: Info, Routing, and Visuals -->
         <div class="eoi-info">
             <h1>Student Roster Application</h1>
-            
+
             <div class="disclaimer-box">
-                <strong>Important Notice:</strong> 
-                Project FRC’s participation in the 2027 season is contingent upon successfully securing our initial $6,300 USD registration funding by November 17th. While we are actively pitching corporate partners to offset costs, students must be prepared for the financial and time commitments outlined in this form.
+                <strong>Important Notice:</strong>
+                Project FRC’s participation in the 2027 season is contingent upon
+                successfully securing our initial $6,300 USD registration funding
+                by November 17th. While we are actively pitching corporate partners
+                to offset costs, students must be prepared for the financial and time
+                commitments outlined in this form.
             </div>
 
             <!-- Routing for non-students -->
             <div class="card outline-card brand-border">
                 <h3>Not a student?</h3>
-                <p>We are actively seeking adult professionals to help guide the team and corporate partners to fund our journey.</p>
+                <p>
+                    We are actively seeking adult professionals to help guide
+                    the team and corporate partners to fund our journey.
+                </p>
                 <div class="button-group-small">
-                    <a href="mailto:enquiries@projectfrc.lk" class="text-link">Mentor the Team &rarr;</a>
+                    <a href="mailto:enquiries@projectfrc.lk" class="text-link"
+                        >Mentor the Team &rarr;</a
+                    >
                     <a href="/sponsors" class="text-link">Sponsor Us &rarr;</a>
                 </div>
             </div>
 
-            <div class="image-wrapper">
-                <Image 
-                    src={teamPhoto} 
-                    alt="FRC team posing with their robot" 
+            <div class="image-container">
+                <Image
+                    src={posingWithMascots}
+                    alt="Students posing with team mascots"
                     class="rounded-image"
                 />
+                <p class="hover-text">Students posing with team mascots</p>
             </div>
         </div>
 
         <!-- Right Column: The Google Form -->
         <div class="eoi-form-container">
-            <iframe src="https://forms.gle/3fjmBShiWUtEgTFE6" title="Student Expression of Interest Form"></iframe>
+            <iframe
+                src="https://forms.gle/3fjmBShiWUtEgTFE6"
+                title="Student Expression of Interest Form"></iframe>
         </div>
-        
     </section>
 </BaseLayout>
 
@@ -60,7 +70,7 @@ import teamPhoto from "../assets/robot-shooting-balls-during-match.jpeg";
         flex-direction: column;
         gap: 2rem;
         position: sticky;
-        top: 2rem; 
+        top: 2rem;
     }
 
     .disclaimer-box {
@@ -103,15 +113,11 @@ import teamPhoto from "../assets/robot-shooting-balls-during-match.jpeg";
         text-decoration: underline;
     }
 
-    .image-wrapper {
-        width: 100%;
-    }
-
     .rounded-image {
         width: 100%;
         height: auto;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 8px;
         border: 2px solid var(--cinnabar);
         box-shadow: 0 10px 30px rgba(171, 49, 45, 0.1);
     }
@@ -119,9 +125,9 @@ import teamPhoto from "../assets/robot-shooting-balls-during-match.jpeg";
     /* Container tailored to Google Forms */
     .eoi-form-container {
         width: 100%;
-        height: clamp(800px, 120vh, 1800px); 
+        height: clamp(800px, 120vh, 1800px);
         background: var(--card-bg);
-        border-radius: 12px;
+        border-radius: 8px;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.05);
     }

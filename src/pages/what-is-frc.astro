@@ -3,72 +3,98 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Countdown from "../components/Countdown.astro";
 
 const kickoffDate: Date = new Date("2027-01-09");
+
+import { Image } from "astro:assets";
+
+import walkingToAMatch from "../assets/walking-to-a-match.jpeg";
+import turretPrototype from "../assets/turret-prototype.jpeg";
 ---
 
 <BaseLayout>
     <section id="hero" class="hero-layout">
-        <h1>What is FRC?</h1>
-        <p class="subtitle">
-            FIRST Robotics Competition (FRC) is a worldwide high-school robotics
-            tournament, where student led teams compete in a new game yearly.
-            Combining STEM education with sporting intensity, FRC empowers
-            ambitious students to collaborate with peers, learn real world
-            skills and tackle engineering under pressure.
-        </p>
+        <div class="hero-content">
+            <h1>What is FRC?</h1>
+            <p class="subtitle">
+                FIRST Robotics Competition (FRC) is a worldwide high-school
+                robotics tournament, where student led teams compete in a new
+                game yearly. Combining STEM education with sporting intensity,
+                FRC empowers ambitious students to collaborate with peers, learn
+                real world skills and tackle engineering under pressure.
+            </p>
+        </div>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/Jd29kzjclV0?si=hwkDV5iHEU_rMBhk"
+                title="What is FRC?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
     </section>
 
     <section id="season-timeline" class="content-section">
         <h2>Throughout a Season</h2>
-        <div class="card-grid">
-            <div class="icon-card important-card">
-                <div class="card-titlebar">
-                    <span class="icon">01</span>
-                    <h3>Kickoff <span>(January)</span></h3>
-                </div>
-                <p>
-                    In <Countdown targetDate={kickoffDate}/> days, the 2027 season begins with a release
-                    video and game manual manual on the <a
-                        href="https://www.firstinspires.org/programs/frc/"
-                        >FIRST website</a
-                    >. With no prior knowledge, teams start strategising and
-                    prototyping for different aspects of the game.
-                </p>
+        <div class="timeline-content">
+            <div class="image-container">
+                <Image
+                    src={turretPrototype}
+                    alt="An early turret prototype"
+                    class="rounded-image"
+                />
+                <p class="hover-text">An early turret prototype</p>
             </div>
-            <div class="icon-card">
-                <div class="card-titlebar">
-                    <span class="icon">02</span>
-                    <h3>Build Season <span>(Jan - March)</span></h3>
+
+            <div class="card-grid">
+                <div class="icon-card important-card">
+                    <div class="card-titlebar">
+                        <span class="icon">01</span>
+                        <h3>Kickoff <span>(January)</span></h3>
+                    </div>
+                    <p>
+                        In <Countdown targetDate={kickoffDate} /> days, the 2027 season
+                        begins with a release video and game manual manual on the
+                        <a href="https://www.firstinspires.org/programs/frc/"
+                            >FIRST website</a
+                        >. With no prior knowledge, teams start strategising and
+                        prototyping for different aspects of the game.
+                    </p>
                 </div>
-                <p>
-                    Teams work intensely, often 20-30 hours per week. During the
-                    season students design, manufacture, and program their robot
-                    for competiton. Working alongside mentors, they build a
-                    battle-ready machine.
-                </p>
-            </div>
-            <div class="icon-card">
-                <div class="card-titlebar">
-                    <span class="icon">03</span>
-                    <h3>Competitions <span>(March - April)</span></h3>
+                <div class="icon-card">
+                    <div class="card-titlebar">
+                        <span class="icon">02</span>
+                        <h3>Build Season <span>(Jan - March)</span></h3>
+                    </div>
+                    <p>
+                        Teams work intensely, often 20-30 hours per week. During
+                        the season students design, manufacture, and program
+                        their robot for competiton. Working alongside mentors,
+                        they build a battle-ready machine.
+                    </p>
                 </div>
-                <p>
-                    Working in randomised alliances of three each match, teams
-                    coordinate strategy and compete on a basketball-court sized
-                    field. Between games, they repair damages in pit and
-                    optimise software on the fly to qualify for Worlds.
-                </p>
-            </div>
-            <div class="icon-card">
-                <div class="card-titlebar">
-                    <span class="icon">04</span>
-                    <h3>Off Season <span>(April - Next Jan)</span></h3>
+                <div class="icon-card">
+                    <div class="card-titlebar">
+                        <span class="icon">03</span>
+                        <h3>Competitions <span>(March - April)</span></h3>
+                    </div>
+                    <p>
+                        Working in randomised alliances of three each match,
+                        teams coordinate strategy and compete on a
+                        basketball-court sized field. Between games, they repair
+                        damages in pit and optimise software on the fly to
+                        qualify for Worlds.
+                    </p>
                 </div>
-                <p>
-                    Until next kickoff, students learn new things, improve their
-                    bot, prepare for recruitment, and more. In this time, teams
-                    reflect on their season and progress. Sometimes, they will
-                    compete in off-season competitions.
-                </p>
+                <div class="icon-card">
+                    <div class="card-titlebar">
+                        <span class="icon">04</span>
+                        <h3>Off Season <span>(April - Next Jan)</span></h3>
+                    </div>
+                    <p>
+                        Until next kickoff, students learn new things, improve
+                        their bot, prepare for recruitment, and more. In this
+                        time, teams reflect on their season and progress.
+                        Sometimes, they will compete in off-season competitions.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -130,7 +156,32 @@ const kickoffDate: Date = new Date("2027-01-09");
 
 <style>
     .hero-layout {
-        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: stretch;
+        margin-top: 2rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .timeline-content {
+        display: grid;
+        grid-template-columns: 35% 1fr;
+        gap: 3rem;
+        align-items: top;
     }
 
     .icon-card {
@@ -163,5 +214,15 @@ const kickoffDate: Date = new Date("2027-01-09");
     .card-titlebar > h3 > span {
         display: block;
         color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+        .hero-layout, .timeline-content {
+            grid-template-columns: 1fr;
+        }
+
+        .timeline-content .card-grid {
+            order: -1;
+        }
     }
 </style>
